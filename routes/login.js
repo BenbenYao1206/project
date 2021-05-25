@@ -28,10 +28,16 @@ router.post('/login', (req, res) => {
           if (result == '') {
               res.send('登录失败');
           }
+          
           else {
-            res.redirect('/index');
+            if (req.body.name =="lulu" && req.body.pass == 1206){
+                res.redirect('/manager');
+              }else{
+            
+               res.redirect('/index');    
+              }
           }
-      }
+        }
   });
 });
 
