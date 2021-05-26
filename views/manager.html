@@ -42,8 +42,8 @@
 					<td><%=o.juice %></td>
 					<td><%=o.shop %></td>
 					<td>
-						<input data-id=<%=o %> type="button" value="删除" class="del_button"/>
-						<input data-id=<%=o %> type="button" value="修改" class="upd_button"/>
+						<a href="/manager/delete/<%=o.id %>" class="del_button">删除</a>
+						<a href="/manager/edit/<%=o.id %>" class="upd_button">修改</a>
 					</td>
 				</tr>
 			<% }) %>
