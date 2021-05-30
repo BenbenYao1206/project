@@ -92,6 +92,8 @@
       <!-- end header inner -->
       <!-- end header -->
       <!-- Our Juices -->
+
+      
       <div class="juices ">
          <div class="container">
             <div class="row">
@@ -102,139 +104,32 @@
                   </div>
                </div>
             </div>
+
+            <% 
+            for(var o of data){
+            %>
+
             <div class="row">
                <div class="col-md-4">
                   <div class="our_main_box">
                      <div class="our_img">
-                        <figure><img src="images/our1.png" alt="#"/></figure>
+                        <figure><img src="<%= o.image%>" alt="#"/></figure>
                      </div>
                      <div class="our_text">
-                        <h4>$<strong class="yellow">50</strong></h4>
-                        <h3>Orange Juice</h3>
-                        <p>is a long established fact that a reader will be</p>
-                        <a class="read_more" href="#">Order Now</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4">
-               </div>
-               <div class="col-md-4">
-                  <div class="our_main_box">
-                     <div class="our_img">
-                        <figure><img src="images/our2.png" alt="#"/></figure>
-                     </div>
-                     <div class="our_text">
-                        <h4>$<strong class="yellow">50</strong></h4>
-                        <h3>Orange Juice</h3>
-                        <p>is a long established fact that a reader will be</p>
-                        <a class="read_more" href="#">Order Now</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 ">
-                  <div class="our_main_box">
-                     <div class="our_img">
-                        <figure><img src="images/our3.png" alt="#"/></figure>
-                     </div>
-                     <div class="our_text">
-                        <h4>$<strong class="yellow">50</strong></h4>
-                        <h3>Orange Juice</h3>
-                        <p>is a long established fact that a reader will be</p>
-                        <a class="read_more" href="#">Order Now</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 margin_top">
-                  <div class="our_main_box">
-                     <div class="our_img">
-                        <figure><img src="images/our4.png" alt="#"/></figure>
-                     </div>
-                     <div class="our_text">
-                        <h4>$<strong class="yellow">50</strong></h4>
-                        <h3>Orange Juice</h3>
-                        <p>is a long established fact that a reader will be</p>
-                        <a class="read_more" href="#">Order Now</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="our_main_box">
-                     <div class="our_img">
-                        <figure><img src="images/our5.png" alt="#"/></figure>
-                     </div>
-                     <div class="our_text">
-                        <h4>$<strong class="yellow">50</strong></h4>
-                        <h3>Orange Juice</h3>
-                        <p>is a long established fact that a reader will be</p>
+                        <h4>$<strong class="yellow"><%= o.money%></strong></h4>
+                        <h3><%= o.name%></h3>
+                        <p><%= o.introduce%></p>
                         <a class="read_more" href="#">Order Now</a>
                      </div>
                   </div>
                </div>
             </div>
-         </div>
-      </div>
+
+               <%
+                 }
+               %>
       <!-- end Our Juices  section -->
-      <!--  footer -->
-      <!-- <footer id="contact">
-         <div class="footer">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-12">
-                     <div class="titlepage">
-                        <h2>Contact Us</h2>
-                     </div>
-                  </div>
-                  <div class="col-md-10 offset-md-1">
-                     <form id="request" class="main_form">
-                        <div class="row">
-                           <div class="col-md-12 ">
-                              <input class="contactus" placeholder="Full Name" type="type" name="Full Name"> 
-                           </div>
-                           <div class="col-md-7">
-                              <input class="contactus" placeholder="Email" type="type" name="Email"> 
-                           </div>
-                           <div class="col-md-7">
-                              <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">                          
-                           </div>
-                           <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
-                              <ul class="social_icon">
-                                 <h3>Follow Me</h3>
-                                 <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                 <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                 <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-                                 <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                              </ul>
-                           </div>
-                           <div class="col-md-12">
-                              <textarea class="contactus1" placeholder="Message" type="type" Message="Name">Message </textarea>
-                           </div>
-                           <div class="col-md-12">
-                              <button class="send_btn">Send</button>
-                           </div>
-                        </div>
-                     </form>
-                  </div>
-                  <div class="col-md-10 offset-md-1">
-                     <ul class="location_icon">
-                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a> Locatins</li>
-                        <li><a href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></a> +71 9087654321</li>
-                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>demo@gmail.com</li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-            <div class="copyright">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <p>Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </footer> -->
-      <!-- end footer -->
+      
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
