@@ -10,28 +10,7 @@
     <link rel="stylesheet" href="../../static/css/me.css" th:href="@{/css/me.css}">
 </head>
 <body> 
-  <!--导航栏-->
-  <!-- <nav class="ui inverted gird-header" >
-    <div class="ui container">
-      <div class="ui inverted secondary stackable menu">
-        <h2 class="ui olive header item" style="font-family: STSong">管理后台</h2>
-        <a href="/blogs" class=" m-item item m-mobile-hide"><i class="home icon"></i>文章管理</a>
-        <a href="#" class="active m-item item m-mobile-hide"><i class="pencil alternate icon"></i>用户管理</a>
-        <a href="#" class=" m-item item m-mobile-hide"><i class="image icon"></i>评论管理</a>
-        <div class="right m-item m-mobile-hide menu">
-          <div class="ui dropdown  item">
-            <div class="text">
-              <img class="ui avatar image" src="/img/me.jpg" th:src="@{/img/me.jpg}">
-              <span>oneStar</span>
-            </div>
-            <i class="dropdown icon"></i>
-            <div class="menu">
-              <a href="#" class="item">注销</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
+ 
     <h2 class="ui olive header item" style="font-family: STSong">管理后台</h2>
      <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
       <i class="sidebar icon"></i>
@@ -54,13 +33,14 @@
   <br>
   <br>
   <!--中间内容-->
+  <form method="POST">
   <div  class="">
     <div class="ui container">
       <div  class="ui secondary segment form">
         <input type="hidden" name="page" >
         <div class="inline fields">
           <div class="field">
-            <input type="text" name="title" placeholder="标题">
+            <input type="text" name="name" placeholder="用户名">
           </div>
           <div class="field">
             <div class="ui labeled action input">
@@ -74,14 +54,13 @@
               </div>
               <button id="clear-btn" class="ui compact button">clear</button>
             </div>
-
           </div>
-         
           <div class="field">
-            <button  type="button" id="search-btn" class="ui mini teal basic button"><i class="search icon"></i>搜索</button>
+                <button type="submit" id="search-btn" class="ui mini teal basic button"><i class="search icon"></i>搜索</button>
           </div>
         </div>
       </div>
+    </form>
       <div id="table-container">
         <table class="ui compact teal table">
           <thead>
@@ -110,17 +89,6 @@
             </td>
              </tr>
               <% }) %>
-          <!-- <tr align="center">
-            <td>1</td>
-            <td>大圣，此去欲何?</td>
-            <td>我的故事</td>
-            <td>是</td>
-            <td>草稿</td>
-            <td>2020-01-02 05:20</td> -->
-            <!-- <td>
-              <a href="#" class="ui mini teal basic button">编辑</a>
-              <a href="#" onclick="return confirm('确定要删除该文章吗？三思啊! 删了可就没了！')" class="ui mini red basic button">删除</a>
-            </td> -->
           </tbody>
           <tfoot>
           <tr>
@@ -131,7 +99,7 @@
                 </div>
 
                 <div class="ten wide column" align="center">
-                  <p>第 <span ></span> 页，共 <span></span> 页，有 <span></span> 篇文章</p>
+                  <p>第 <span ></span> 页，共 <span></span> 页，有 <span></span></p>
                 </div>
 
                 <div class="three wide column" align="center">
@@ -156,18 +124,6 @@
       </div>
 
     </div>
-  </div>
-
-  <!-- <script>
-      Array.from(document.getElementsByClassName("del_button")).forEach(i=> {
-      i.onclick = function(){
-        if(confirm("是否更改该数据？")){
-          let index = this.getAttribute("data-id");
-          window.location.href = '/update' + index;
-        }
-      }
-    });
-  </script> -->
-  
+  </div>  
 </body>
 </html>

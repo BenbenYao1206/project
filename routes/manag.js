@@ -60,12 +60,24 @@ router.post('/edit/:id',(req,res) => {
   });
 });
 
-// router.get('/edit/:id',(req,res) =>{
-//   connection.query("update pro_manager where id ='"+req.params.id+"' set (name,phone,juice,shop,time) =(?,?,?,?,?) ",[req.body.name,req.body.phone,req.body.juice,req.body.shop,req.body.time], 
-//   function(){
-//     res.redirect('/manag')
-//   })
-// });
+//后台查询
+router.post('/', (req, res) => {
+  var searchSQL = "select * from pro_manager where name = '" + req.body.name + "'";
+  connection.query(searchSQL, function (err, results) {
+      if (err) {
+          console.log('err', err);
+          return;
+      }
+      if (results == '') {
+          console.log('查无此人');
+      }
+      var datastring = JSON.stringify(results);
+      var data = JSON.parse(datastring);
+      console.log('result:',data);
+      res.render('manag',{"detail":data})
+      })
+    });
+      
 
 
 router.get('/addpage',(req,res) =>{

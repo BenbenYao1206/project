@@ -15,9 +15,8 @@ connection.connect();
 router.get('/', function (req, res) {
   res.render('login');
 });
+
 router.post('/login', (req, res) => {
-
-
   var selectSQL = "select name,pass from pro_user where name = '" + req.body.name + "' and pass = " + req.body.pass + "";
   connection.query(selectSQL, function (err, result, fields) {
       if (err) {
