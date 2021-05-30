@@ -14,7 +14,6 @@ var juiceRouter = require('./routes/juice');
 var testimonialRouter = require('./routes/testimonial');
 var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
-var managerRouter = require('./routes/manager');
 var addRouter = require('./routes/add');
 var managRouter = require('./routes/manag');
 
@@ -46,7 +45,6 @@ app.use('/juice', juiceRouter);
 app.use('/tes', testimonialRouter);
 app.use('/', loginRouter);
 app.use('/register', registerRouter);
-app.use('/manager', managerRouter);
 app.use('/add', addRouter);
 app.use('/manag', managRouter);
 // catch 404 and forward to error handler
