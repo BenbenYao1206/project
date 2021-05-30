@@ -27,15 +27,15 @@ router.get('/', function (req, res) {
 
 router.post('/', (req, res) => {
 
-    var insertSql = 'insert into pro_manager(name,phone,juice,shop) values(?,?,?,?)';
-    connection.query(insertSql, [req.body.name,req.body.phone,req.body.juice,req.body.shop], function (err, result, fields) {
+    var insertSql = 'insert into pro_manager(name,phone,juice,shop,time) values(?,?,?,?,?)';
+    connection.query(insertSql, [req.body.name,req.body.phone,req.body.juice,req.body.shop,req.body.time], function (err, result, fields) {
     
         if (err) {
             console.log('err', err);
             return;
         } else {
            
-            res.redirect('/manager');
+            res.redirect('/manag');
         }
     });
     });

@@ -31,7 +31,7 @@ router.post('/login', (req, res) => {
           
           else {
             if (req.body.name =="lulu" && req.body.pass == 1206){
-                res.redirect('/manager');
+                res.redirect('/manag');
               }else{
             
                res.redirect('/index');    
