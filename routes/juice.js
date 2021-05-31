@@ -60,6 +60,21 @@ router.post('/', (req, res) => {
   });
   });
 
+router.get('/order/:id' , (req,res)=>{
+  connection.query("select name,introduce,money from pro_juice where id ='"+req.params.id+"'",function(err,results){
+    if(err){
+      return;
+    }
+    // console.log('result:',data);
+    connection.query("insert into pro_trolly(name,introduce,money) values(?,?,?)",[results[0].name,results[0].introduce,results[0].money],function(err){
+      if(err){
+        return;
+      }
+      res.redirect('/juice/trolly')
+    })
+  })
+})
+
 module.exports = router;
 
 

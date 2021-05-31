@@ -108,18 +108,19 @@
             <% 
             for(var o of data){
             %>
-            <form action="trolly" method="POST">
-            <div class="row">
-               <div class="col-md-4">
+         <form class="form-horizontal" action="trolly" method="POST">
+            <div class="row form-group">
+               <div class="col-sm-4">
                   <div class="our_main_box">
                      <div class="our_img">
                         <figure><img src="<%= o.image%>" alt="#"/></figure>
                      </div>
                      <div class="our_text">
+                        <a><%= o.id%></a>
                         <h4>$<strong class="yellow"><%= o.money%></strong></h4>
                         <h3><%= o.name%></h3>
                         <p><%= o.introduce%></p>
-                        <a class="read_more" href="/juice/trolly">Order Now</a>
+                        <a class="read_more" href="/juice/order/<%=o.id %>">Order Now</a>
                      </div>
                   </div>
                </div>
