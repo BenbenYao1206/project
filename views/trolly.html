@@ -15,6 +15,7 @@
 			<th class="col-md-1 car-menu">
 				<label><input type="checkbox" id="check-goods-all" />全选</label>
 			</th>
+			<th class="col-md-3 car-menu">ID</th>
 			<th class="col-md-3 car-menu">商品信息</th>
 			<th class="col-md-3 car-menu">商品参数</th>
 			<th class="col-md-1 car-menu">单价</th>
@@ -28,11 +29,13 @@
 	<div class="goods-content">
 		<% detail.forEach(o =>{ %>
 			<tbody class="goods-item">
-			<div class="panel panel-default">
 			<tr class="panel-body" style="text-align: center;">
 					 <td class="col-md-1 car-goods-info">
 						 <label><input type="checkbox" class="goods-list-item"/></label>
 					 </td>
+					 <td class="car-goods-info goods-id">
+						<%=o.id %>
+					</td>
 					 <td class="col-md-3 car-goods-info goods-image-column">
 						 <img class="goods-image" src="<%=o.image %>" style="width: 100px; height: 100px;" />
 						 <span id="goods-info"><%=o.introduce %></span>
@@ -55,10 +58,9 @@
 						 <span class="single-total"><%=o.sum_money %></span>
 					 </td>
 					 <td class="col-md-2 car-goods-info goods-operate">
-						 <button type="button" class="btn btn-danger item-delete">删除</button>
+						 <a href="/juice/delete/<%=o.id %>" type="button" class="btn btn-danger item-delete">删除</a>
 					 </td>
 				</tr>
-			</div>
 			</tbody>
 				<% }) %>
 		<!--goods display-->

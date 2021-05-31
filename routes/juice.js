@@ -22,18 +22,7 @@ router.get('/', function (req, res, next) {
   });
 });
 
-//购物车
-// router.get('/trolly', function (req, res) {
-//   // res.render('trolly')
-//   var selectSQL = "select * from pro_trolly " 
-//     connection.query(selectSQL, function (err, results, fields){
-//       console.log(err);
-//       console.log(results);
-//       console.log(fields);
-//       res.render('trolly',{detail:results} );
-//     
-//       });
-// });
+
 
 router.get('/trolly',(req,res) => {
   connection.query("select * from pro_trolly order by id desc",function(err,results){
@@ -73,7 +62,16 @@ router.get('/order/:id' , (req,res)=>{
       res.redirect('/juice/trolly')
     })
   })
-})
+});
+
+
+
+
+router.get('/delete/:id',(req,res) =>{
+  connection.query("delete from pro_trolly where id ='"+req.params.id+"'",function(){
+    res.redirect('/juice/trolly')
+  })
+});
 
 module.exports = router;
 
