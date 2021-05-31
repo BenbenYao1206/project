@@ -9,24 +9,62 @@
 <link type="text/css" rel="stylesheet" href="/css/style_trolly.css" />
 
 <body>
-<div class="shopping-car-container">
-	<div class="car-headers-menu">
-		<div class="row">
-			<div class="col-md-1 car-menu">
-				<label><input type="checkbox" id="check-goods-all" /><span id="checkAll">全选</span></label>
-			</div>
-			<div name="name" class="col-md-3 car-menu">商品信息</div>
-			<div name="introduce" class="col-md-3 car-menu">商品参数</div>
-			<div name="money" class="col-md-1 car-menu">单价</div>
-			<div name="amount" class="col-md-1 car-menu">数量</div>
-			<div name="sum_money" class="col-md-1 car-menu">金额</div>
-			<div class="col-md-2 car-menu">操作</div>
-		</div>
-	</div>
+<table class="shopping-car-container">
+	<thead class="car-headers-menu">
+		<tr class="row">
+			<th class="col-md-1 car-menu">
+				<label><input type="checkbox" id="check-goods-all" />全选</label>
+			</th>
+			<th class="col-md-3 car-menu">商品信息</th>
+			<th class="col-md-3 car-menu">商品参数</th>
+			<th class="col-md-1 car-menu">单价</th>
+			<th class="col-md-1 car-menu">数量</th>
+			<th class="col-md-1 car-menu">金额</th>
+			<th class="col-md-2 car-menu">操作</th>
+		</tr>
+	</thead>
+	<tbody>
+
 	<div class="goods-content">
-	
+		<% detail.forEach(o =>{ %>
+			<tbody class="goods-item">
+			<div class="panel panel-default">
+			<tr class="panel-body" style="text-align: center;">
+					 <td class="col-md-1 car-goods-info">
+						 <label><input type="checkbox" class="goods-list-item"/></label>
+					 </td>
+					 <td class="col-md-3 car-goods-info goods-image-column">
+						 <img class="goods-image" src="<%=o.image %>" style="width: 100px; height: 100px;" />
+						 <span id="goods-info"><%=o.introduce %></span>
+					 </td>
+					 <td class="col-md-3 car-goods-info goods-params">
+						 <%=o.name %>
+					 </td>
+					 <td class="col-md-1 car-goods-info goods-price">
+						 <span>￥</span>
+						 <span class="single-price"><%=o.money %></span>
+					 </td>
+			 
+					 <td>
+						  <input type="text" class="form-control goods-count" value="<%=o.amount %>">
+						  <button type="button" class="btn car-decrease">-</button>
+						  <button type="button" class="btn car-add">+</button>
+					 </td>
+					 <td class="col-md-1 car-goods-info goods-money-count">
+						 <span>￥</span>
+						 <span class="single-total"><%=o.sum_money %></span>
+					 </td>
+					 <td class="col-md-2 car-goods-info goods-operate">
+						 <button type="button" class="btn btn-danger item-delete">删除</button>
+					 </td>
+				</tr>
+			</div>
+			</tbody>
+				<% }) %>
 		<!--goods display-->
 	</div>
+</tbody>
+</table>
 	<div class="panel panel-default">
 		<div class="panel-body bottom-menu-include">
 			<div class="col-md-1 check-all-bottom bottom-menu">
@@ -49,7 +87,7 @@
 			<div class="col-md-1 bottom-menu">
 				<span>合计：<span id="selectGoodsMoney">0.00</span></span>
 			</div>
-			<div class="col-md-1 bottom-menu submitData submitDis">
+			<div style="position: relative;" class="col-md-1 bottom-menu submitData submitDis">
 				结算
 			</div>
 		</div>
@@ -114,4 +152,4 @@
 <div style="text-align:center;margin:-50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
 </div>
 </body>
-</html>
+</html>		

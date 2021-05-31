@@ -23,16 +23,26 @@ router.get('/', function (req, res, next) {
 });
 
 //购物车
-router.get('/trolly', function (req, res) {
-  res.render('trolly')
-  // var selectSQL = "select * from pro_juice " 
-  //   connection.query(selectSQL, function (err, results, fields){
-  //     console.log(err);
-  //     console.log(results);
-  //     console.log(fields);
-  //     res.render('trolly',{detail:results} );
-  //   
-  //     });
+// router.get('/trolly', function (req, res) {
+//   // res.render('trolly')
+//   var selectSQL = "select * from pro_trolly " 
+//     connection.query(selectSQL, function (err, results, fields){
+//       console.log(err);
+//       console.log(results);
+//       console.log(fields);
+//       res.render('trolly',{detail:results} );
+//     
+//       });
+// });
+
+router.get('/trolly',(req,res) => {
+  connection.query("select * from pro_trolly order by id desc",function(err,results){
+   var datastring = JSON.stringify(results);
+   var data = JSON.parse(datastring);
+   res.render('trolly',{
+     "detail":data
+   });
+ })
 });
 
 router.post('/', (req, res) => {
