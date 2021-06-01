@@ -50,12 +50,13 @@ router.post('/', (req, res) => {
   });
 
 router.get('/order/:id' , (req,res)=>{
-  connection.query("select name,introduce,money from pro_juice where id ='"+req.params.id+"'",function(err,results){
+  connection.query("select * from pro_juice where id ='"+req.params.id+"'",function(err,results){
     if(err){
       return;
     }
+  connection.query("update pro_juice set views = " + (results[0].views + 1) + " where id = " + req.params.id);
     // console.log('result:',data);
-    connection.query("insert into pro_trolly(name,introduce,money) values(?,?,?)",[results[0].name,results[0].introduce,results[0].money],function(err){
+  connection.query("insert into pro_trolly(name,introduce,money) values(?,?,?)",[results[0].name,results[0].introduce,results[0].money],function(err){
       if(err){
         return;
       }

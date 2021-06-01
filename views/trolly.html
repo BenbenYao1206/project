@@ -9,13 +9,16 @@
 <link type="text/css" rel="stylesheet" href="/css/style_trolly.css" />
 
 <body>
+	<div>
+		<a type="button" class="btn btn-info item-delete" href="/juice">Order Juice</a>
+	</div>
 <table class="shopping-car-container">
 	<thead class="car-headers-menu">
 		<tr class="row">
 			<th class="col-md-1 car-menu">
 				<label><input type="checkbox" id="check-goods-all" />全选</label>
 			</th>
-			<th class="col-md-3 car-menu">ID</th>
+			<th style="display: none;" class="col-md-3 car-menu">ID</th>
 			<th class="col-md-3 car-menu">商品信息</th>
 			<th class="col-md-3 car-menu">商品参数</th>
 			<th class="col-md-1 car-menu">单价</th>
@@ -33,7 +36,7 @@
 					 <td class="col-md-1 car-goods-info">
 						 <label><input type="checkbox" class="goods-list-item"/></label>
 					 </td>
-					 <td class="car-goods-info goods-id">
+					 <td style="display: none;" class="car-goods-info goods-id">
 						<%=o.id %>
 					</td>
 					 <td class="col-md-3 car-goods-info goods-image-column">

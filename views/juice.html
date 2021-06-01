@@ -116,10 +116,11 @@
                         <figure><img src="<%= o.image%>" alt="#"/></figure>
                      </div>
                      <div class="our_text">
-                        <a><%= o.id%></a>
+                        <a>第<%= o.id%>件商品</a>
                         <h4>$<strong class="yellow"><%= o.money%></strong></h4>
                         <h3><%= o.name%></h3>
-                        <p><%= o.introduce%></p>
+                        <p style="padding-top: 15px;padding-bottom: 0px;"><%= o.introduce%></p>
+                        <p style="padding-top: 0px;">月销<%= o.views%>单</p>
                         <a class="read_more" href="/juice/order/<%=o.id %>">Order Now</a>
                      </div>
                   </div>
