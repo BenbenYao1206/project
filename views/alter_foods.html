@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编辑数据</title>
+</head>
+<body>
+   
+    <form action="update" method="POST">
+        <input type="hidden" name="id" value="<%=detail.id%>" />
+        <input type="text" name="name" value="<%=detail.name%>" placeholder="果汁名"/>
+        <br/>
+        <input type="number" name="money" value="<%=detail.money%>" placeholder="单价"/>
+        <br/>
+        <input type="text" name="introduce" value="<%=detail.introduce%>" placeholder="介绍"/>
+        <br/>
+        <input type="text" name="views" value="<%=detail.views%>" placeholder="浏览量"/>
+        <br/>
+        <br/>
+        <button class="button">提交</button>
+    </form>
+</body>
+</html>

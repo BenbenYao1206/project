@@ -77,7 +77,6 @@ router.post('/', (req, res) => {
       res.render('manag',{"detail":data})
       })
     });
-      
 
 
 router.get('/addpage',(req,res) =>{

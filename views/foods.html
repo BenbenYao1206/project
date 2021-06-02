@@ -22,7 +22,7 @@
     <div class="ui container">
     <div class="right menu">
         <a href="/index" class=" item"> Home  </a>
-        <a href="/foods" class=" item"> 品种  </a>
+        <a href="/manag" class=" item"> 用户  </a>
         <a href="#" class=" item">发布</a>
         <a href="#" class="teal active item">>列表</a>
     </div>
@@ -41,11 +41,11 @@
         <input type="hidden" name="page" >
         <div class="inline fields">
           <div class="field">
-            <input type="text" name="name" placeholder="用户名">
+            <input type="text" name="name" placeholder="果汁名">
           </div>
-          <div class="field">
+          <!-- <div class="field">
             <input type="number" name="phone" placeholder="电话">
-          </div>
+          </div> -->
           <div class="field">
           </div>
           <div class="field">
@@ -59,10 +59,11 @@
           <thead>
           <tr align="center">
             <th>ID</th>
-            <th>用户名</th>
-            <th>密码</th>
-            <th>确认密码</th>
-            <th>电话</th>
+            <th>照片</th>
+            <th>果汁名</th>
+            <th>单价</th>
+            <th>介绍</th>
+            <th>浏览量</th>
             <th>操作</th>
           </tr>
           </thead>
@@ -70,13 +71,14 @@
             <% detail.forEach(o =>{ %>
           <tr align="center">
             <td><%=o.id %></td>
+            <td></td>
             <td><%=o.name %></td>
-            <td><%=o.pass %></td>
-            <td><%=o.cpass %></td>
-            <td><%=o.phone %></td>
+            <td><%=o.money %></td>
+            <td><%=o.introduce %></td>
+            <td><%=o.views %></td>
             <td>
-               <a href="/manag/delete/<%=o.id %>" class="del_button">删除</a>
-               <a href="/manag/edit/<%=o.id %>" class="upd_button">修改</a>
+               <a href="/foods/del/<%=o.id %>" class="del_button">删除</a>
+               <a href="/foods/edi/<%=o.id %>" class="upd_button">修改</a>
             </td>
              </tr>
               <% }) %>
@@ -98,7 +100,7 @@
                 </div>
               </div>
               <div align="center">
-                <a href="/add" id="add_button">
+                <a href="/add_foods" id="add_button">
                   <button type="button" class="ui teal button m-mobile-wide m-margin-top"><i class="pencil icon"></i>新增</button>
                 </a>
               </div>
@@ -106,12 +108,6 @@
           </tr>
           </tfoot>
         </table>
-
-        <div class="ui success message">
-          <i class="close icon"></i>
-          <div class="">提示：操作成功！</div>
-        </div>
-
       </div>
 
     </div>
