@@ -65,7 +65,14 @@ router.get('/order/:id' , (req,res)=>{
   })
 });
 
-
+router.get('/plus/:id',(req,res) =>{
+  connection.query("select * from pro_trolly where id ='"+req.params.id+"'",function(err,results){
+    console.log(results);
+    connection.query("update pro_trolly set amount = " + (results[0].amount + 1) + " where id = " + req.params.id ,function(){
+      res.redirect('/juice/trolly');
+    });
+  });
+});
 
 
 router.get('/delete/:id',(req,res) =>{

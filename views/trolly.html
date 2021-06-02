@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <title>购物车</title>
+<script src="./src/bootstrap-input-spinner.js"></script>
 </head>
 
 <link rel="stylesheet" type="text/css" href="/css/bootstrap_trolly.css">
@@ -51,10 +52,9 @@
 						 <span class="single-price"><%=o.money %></span>
 					 </td>
 			 
+
 					 <td>
-						  <input type="text" class="form-control goods-count" value="<%=o.amount %>">
-						  <button type="button" class="btn car-decrease">-</button>
-						  <button type="button" class="btn car-add">+</button>
+						 <input class="form-control" type="number" value="1" min="0" max="1000" step="1"/>
 					 </td>
 					 <td class="col-md-1 car-goods-info goods-money-count">
 						 <span>￥</span>
