@@ -43,17 +43,20 @@
             <input type="text" name="name" placeholder="用户名">
           </div>
           <div class="field">
-            <div class="ui labeled action input">
-              <div class="ui type selection dropdown">
-                <input type="hidden" name="typeId">
-                <i class="dropdown icon"></i>
-                <div class="default text">分类</div>
-                <div class="menu">
+            <input type="number" name="phone" placeholder="电话">
+          </div>
+          <div class="field">
+            <!-- <div class="ui labeled action input">
+              <div class="ui type selection dropdown"> -->
+                <!-- <input type="hidden" name="typeId"> -->
+                <!-- <i class="dropdown icon"></i> -->
+                <!-- <div class="default text">分类</div> -->
+                <!-- <div class="menu">
                   <div class="item" data-value="1">我的故事</div>
-                </div>
-              </div>
+                </div> -->
+              <!-- </div>
               <button id="clear-btn" class="ui compact button">clear</button>
-            </div>
+            </div> -->
           </div>
           <div class="field">
                 <button type="submit" id="search-btn" class="ui mini teal basic button"><i class="search icon"></i>搜索</button>
@@ -67,10 +70,9 @@
           <tr align="center">
             <th>ID</th>
             <th>用户名</th>
+            <th>密码</th>
+            <th>确认密码</th>
             <th>电话</th>
-            <th>果汁</th>
-            <th>购买件数</th>
-            <th>下单时间</th>
             <th>操作</th>
           </tr>
           </thead>
@@ -79,10 +81,9 @@
           <tr align="center">
             <td><%=o.id %></td>
             <td><%=o.name %></td>
+            <td><%=o.pass %></td>
+            <td><%=o.cpass %></td>
             <td><%=o.phone %></td>
-            <td><%=o.juice %></td>
-            <td><%=o.shop %></td>
-            <td><%=o.time %></td>
             <td>
                <a href="/manag/delete/<%=o.id %>" class="del_button">删除</a>
                <a href="/manag/edit/<%=o.id %>" class="upd_button">修改</a>
