@@ -27,8 +27,8 @@ router.get('/', function (req, res) {
 //添加数据到数据库里，当req.bpdy.name = name,时....然后这些数据就可以传到数据库里
 router.post('/', (req, res) => {
 
-    var insertSql = 'insert into pro_juice(name,money,introduce,views) values(?,?,?,?)';
-    connection.query(insertSql, [req.body.name,req.body.money,req.body.introduce,req.body.views], function (err, result, fields) {
+    var insertSql = 'insert into pro_juice(image,name,money,introduce,views) values(?,?,?,?,?)';
+    connection.query(insertSql, [req.body.image,req.body.name,req.body.money,req.body.introduce,req.body.views], function (err, result, fields) {
     
         if (err) {
             console.log('err', err);

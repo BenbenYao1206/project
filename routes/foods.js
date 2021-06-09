@@ -39,6 +39,7 @@ var connection = mysql.createConnection({
          }
          var data = {
            "id":results[0].id,
+           "image":results[0].image,
            "name":results[0].name,
            "money":results[0].money,
            "introduce":results[0].introduce,
@@ -52,7 +53,7 @@ var connection = mysql.createConnection({
       
       //在上一条路由走完了了以后，再更新一下数据，并且展示出来
       router.post('/edi/:id',(req,res) => {
-       connection.query("update pro_juice set name = '"+req.body.name+"',money = '"+req.body.money+"',introduce = '"+req.body.introduce+"',views = '"+req.body.views+"' where id='"+req.body.id+"'",function(err,results){
+       connection.query("update pro_juice set image = '"+req.body.image+"',name = '"+req.body.name+"',money = '"+req.body.money+"',introduce = '"+req.body.introduce+"',views = '"+req.body.views+"' where id='"+req.body.id+"'",function(err,results){
          if(err){
            console.log("err",err)
          }

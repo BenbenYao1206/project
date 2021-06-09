@@ -10,6 +10,8 @@
    
     <form action="update" method="POST">
         <input type="hidden" name="id" value="<%=detail.id%>" />
+        <input type="text" name="name" value="<%=detail.image%>" placeholder="图片地址"/>
+        <br/>
         <input type="text" name="name" value="<%=detail.name%>" placeholder="果汁名"/>
         <br/>
         <input type="number" name="money" value="<%=detail.money%>" placeholder="单价"/>
