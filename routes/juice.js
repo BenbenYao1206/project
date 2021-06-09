@@ -22,18 +22,7 @@ router.get('/', function (req, res, next) {
   });
 });
 
-
-
-router.get('/trolly',(req,res) => {
-  connection.query("select * from pro_trolly order by id desc",function(err,results){
-   var datastring = JSON.stringify(results);
-   var data = JSON.parse(datastring);
-   res.render('trolly',{
-     "detail":data
-   });
- })
-});
-
+//点击下单把那一行数据上传到数据库里
 router.post('/', (req, res) => {
 
   var insertSql = 'insert into pro_trolly(name,introduce,money,amount,sum_money) values(?,?,?,?,?)';
@@ -49,13 +38,27 @@ router.post('/', (req, res) => {
   });
   });
 
+//查询出数据库里的数据，并且按倒序的方式展示出来
+router.get('/trolly',(req,res) => {
+  connection.query("select * from pro_trolly order by id desc",function(err,results){
+   var datastring = JSON.stringify(results);
+   var data = JSON.parse(datastring);
+   res.render('trolly',{
+     "detail":data
+   });
+ })
+});
+
+
+  //点击下单，获取到下单的这一条数据的ID，然后把这个对应的数据展示出来
 router.get('/order/:id' , (req,res)=>{
   connection.query("select * from pro_juice where id ='"+req.params.id+"'",function(err,results){
     if(err){
       return;
     }
+    //点击下单，获取ID，然后然浏览量加一
   connection.query("update pro_juice set views = " + (results[0].views + 1) + " where id = " + req.params.id);
-    // console.log('result:',data);
+   
   connection.query("insert into pro_trolly(name,introduce,money) values(?,?,?)",[results[0].name,results[0].introduce,results[0].money],function(err){
       if(err){
         return;
@@ -65,6 +68,7 @@ router.get('/order/:id' , (req,res)=>{
   })
 });
 
+//购买数量加一，还没有成功
 router.get('/plus/:id',(req,res) =>{
   connection.query("select * from pro_trolly where id ='"+req.params.id+"'",function(err,results){
     console.log(results);
@@ -74,7 +78,7 @@ router.get('/plus/:id',(req,res) =>{
   });
 });
 
-
+//删除一条数据
 router.get('/delete/:id',(req,res) =>{
   connection.query("delete from pro_trolly where id ='"+req.params.id+"'",function(){
     res.redirect('/juice/trolly')
@@ -89,14 +93,3 @@ module.exports = router;
 
 
 
-
-
-// var express = require('express');
-// var router = express.Router();
-
-// /* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('juice');
-// });
-
-// module.exports = router;

@@ -12,7 +12,7 @@ var connection = mysql.createConnection({
 connection.connect();
 
 
-
+//获取到数据库里面的数据，并且传到add_fooda页面，这个是品种信息的添加
 router.get('/', function (req, res) {
     var selectSQL = "select * from pro_juice " 
       connection.query(selectSQL, function (err, results, fields){
@@ -24,6 +24,7 @@ router.get('/', function (req, res) {
         });
   });
 
+//添加数据到数据库里，当req.bpdy.name = name,时....然后这些数据就可以传到数据库里
 router.post('/', (req, res) => {
 
     var insertSql = 'insert into pro_juice(name,money,introduce,views) values(?,?,?,?)';

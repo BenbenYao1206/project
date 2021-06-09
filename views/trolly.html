@@ -41,7 +41,7 @@
 						<%=o.id %>
 					</td>
 					 <td class="col-md-3 car-goods-info goods-image-column">
-						 <img class="goods-image" src="images/our3.png" style="width: 100px; height: 100px;" />
+						<figure><img src="/images/our3.png"/></figure>
 						 <span id="goods-info"><%=o.name %></span>
 					 </td>
 					 <td class="col-md-3 car-goods-info goods-params">
@@ -51,7 +51,11 @@
 						 <span>￥</span>
 						 <span class="single-price"><%=o.money %></span>
 					 </td>
-			 
+					 <!-- <td>
+						<input type="text" class="form-control goods-count" value="<%=o.amount %>">
+						<button type="button" class="btn car-decrease">-</button>
+						<button href="/juice/plus/<%=o.id %>" type="button" class="btn car-add">+</button>
+				   </td> -->
 
 					 <td>
 						 <input class="form-control" type="number" value="1" min="0" max="1000" step="1"/>

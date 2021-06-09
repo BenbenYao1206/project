@@ -10,10 +10,8 @@ var connection = mysql.createConnection({
 });
 connection.connect();
 
-// router.get('/', function (req, res) {
-//     res.render('add');
-// });
 
+//把数据库里的数据返回到add页面,这个是用户信息的
 router.get('/', function (req, res) {
     var selectSQL = "select * from pro_manager " 
       connection.query(selectSQL, function (err, results, fields){
@@ -25,6 +23,7 @@ router.get('/', function (req, res) {
         });
   });
 
+  //添加数据到数据库里，当req.bpdy.name = name,时....然后这些数据就可以传到数据库里
 router.post('/', (req, res) => {
 
     var insertSql = 'insert into pro_manager(name,pass,cpass,phone) values(?,?,?,?)';
