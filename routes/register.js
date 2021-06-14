@@ -15,18 +15,19 @@ router.get('/', function (req, res) {
 });
 
 router.post('/', (req, res) => {
-
+    if (req.body.pass !== req.body.cpass) {
+        res.send('密码不一致');
+    }else{
     var insertSql = 'insert into pro_user(name,pass,cpass,phone) values(?,?,?,?)';
     connection.query(insertSql, [req.body.name,req.body.pass,req.body.cpass,req.body.phone], function (err, result, fields) {
-    
         if (err) {
             console.log('err', err);
             return;
         } else {
-           
-            res.redirect('/');
+                 res.redirect('/');    
         }
     });
+}
     });
 
 module.exports = router;

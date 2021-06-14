@@ -13,7 +13,7 @@ var connection =mysql.createConnection({
 connection.connect();
 //数据库里上传到页面
 router.get('/', function (req, res, next) {
-  var sql = 'select * from pro_juice';
+  var sql = 'select * from pro_juice order by id desc';
   connection.query(sql, function (err, result, fields) {
       if (err) {
           console.log('err', err);
